@@ -1,0 +1,36 @@
+{
+
+  "author": "morgane gambis",
+  "license": "ISC",
+  "description": "",
+  "name": "healthworker-graphql-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node .",
+    "initDB": "psql -U postgres -f ./data/init.sql; npm run resetDB",
+    "resetDB": "psql -U ovelo_u -d ovelo -f ./data/structure.sql; DEBUG=seeding node data/seeding.js",
+    "dev": "DEBUG=*,-express*,-body-parser*,-nodemon* CACHE_ENABLED=true DATALOADER_ENABLED=true npx nodemon --ext 'js,gql'",
+    "format": "npx prettier --write ."
+},
+  "dependencies": {
+    "apollo-datasource-rest": "^3.5.2",
+    "apollo-server": "^3.6.7",
+    "bunyan": "^1.8.15",
+    "dataloader": "^2.1.0",
+    "datasource-sql": "^2.0.1",
+    "debug": "^4.3.4",
+    "dotenv": "^16.0.0",
+    "graphql": "^16.4.0",
+    "graphql-scalars": "^1.17.0",
+    "knex": "^2.0.0",
+    "pg": "^8.7.3"
+  },
+
+  "devDependencies": {}
+}

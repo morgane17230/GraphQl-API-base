@@ -1,0 +1,7 @@
+type Hello {
+    world: String
+}
+
+input HelloInput {
+    world: String
+}

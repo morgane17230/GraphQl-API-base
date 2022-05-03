@@ -1,0 +1,3 @@
+type Mutation {
+    exampleHello(input: HelloInput!): Hello
+}
